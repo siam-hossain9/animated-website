@@ -1,0 +1,227 @@
+/* ===========================
+   MOTIVATION SECTION
+   =========================== */
+
+.section-motivation {
+  min-height: 100vh;
+  padding: 8vh 0;
+}
+
+.motivation-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.motivation-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 200;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(141,125,202,0.8), rgba(255,255,255,0.6));
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: none;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+.motivation-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(141,125,202,0.6), transparent);
+}
+
+/* Card Area */
+.motivation-card-area {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 90vw;
+  max-width: 750px;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.nav-arrow:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(141,125,202,0.4);
+  color: rgba(255,255,255,0.9);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(141,125,202,0.2);
+}
+
+.nav-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Card */
+.motivation-card {
+  position: relative;
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 28px;
+  overflow: hidden;
+  animation: motivCardSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes motivCardSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.97);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(141,125,202,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  animation: cardShine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cardShine {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
+
+.card-inner {
+  position: relative;
+  padding: 3rem 3.5rem;
+  z-index: 1;
+}
+
+.card-index {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: 200;
+  color: rgba(141,125,202,0.12);
+  line-height: 1;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  pointer-events: none;
+}
+
+.motivation-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 2.2;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Progress Bars */
+.motivation-progress {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 40px;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(141,125,202,0.8), rgba(255,255,255,0.6));
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-active {
+  width: 60px;
+}
+
+.progress-active::after {
+  width: 100%;
+}
+
+.progress-done::after {
+  width: 100%;
+  background: rgba(141,125,202,0.4);
+}
+
+.progress-bar:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .motivation-title {
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+  }
+  .card-inner {
+    padding: 2rem 1.5rem;
+  }
+  .motivation-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+  .card-index {
+    font-size: 3.5rem;
+  }
+  .nav-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
