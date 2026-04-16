@@ -2,6 +2,19 @@
 
 This repository contains a multi-section immersive website built with React + Vite. It combines shader-based backgrounds, Three.js rendering, multiple canvas particle systems, audio playback, and scroll-driven storytelling.
 
+## Demo Visuals
+
+Screenshots are stored in `docs/demo-visuals/` for quick preview:
+
+![Demo 01](docs/demo-visuals/01-demo.png)
+![Demo 02](docs/demo-visuals/02-demo.png)
+![Demo 03](docs/demo-visuals/03-demo.png)
+![Demo 04](docs/demo-visuals/04-demo.png)
+![Demo 05](docs/demo-visuals/05-demo.png)
+![Demo 06](docs/demo-visuals/06-demo.png)
+![Demo 07](docs/demo-visuals/07-demo.png)
+![Demo 08](docs/demo-visuals/08-demo.png)
+
 ## What This Website Does
 
 The page is a long-form scroll experience with 9 major sections:
